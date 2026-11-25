@@ -30,6 +30,7 @@ def main() -> None:
     # characters, one word, no trailing newline.
     assert 1 <= len(ENTRY) <= 111, f"entry is {len(ENTRY)} chars, gate wants 1-111"
     assert len(ENTRY.split()) == 1, "entry must be a single word"
+    assert ENTRY.isalpha(), "entry must be one plain word, no digits or punctuation"
     assert "\n" not in ENTRY and "\r" not in ENTRY, "entry must be a single line"
     assert ENTRY.strip(), "entry must not be only whitespace"
     assert ENTRY.encode("utf-8").decode("utf-8") == ENTRY
